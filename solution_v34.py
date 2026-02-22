@@ -1,29 +1,5 @@
 """
-NITOR ENERGY — V34
-==================
-V28 LB: 22.721653  (7-model SLSQP)
-V33 LB: 22.488150  (11-model seed diversity — 3rd place!) ← NEW BEST
-1st LB: 22.214397  — gap: 0.273753
-
-V34 STRATEGY — MASSIVE SEED ZOO:
-  KEY INSIGHT from V33: g_xgb_d7_s123 dominated Market A at 93% weight.
-  The huge LB improvement (+0.233) from just 4 new seeds suggests:
-    → Different seeds find fundamentally different loss landscape minima
-    → Retrained models with diverse seeds generalize better to Sep-Nov 2025
-    → SLSQP reliably finds per-market optimal combinations
-
-  V34 expands the seed zoo dramatically:
-    g_xgb_d7:   seeds 42, 123, 456, 789, 999, 314, 2024  (7 models, vs 3 in V33)
-    g_xgb_d8:   seeds 42, 123, 456, 789, 999              (5 models, vs 2 in V33)
-    g_lgb_dart: seeds 42, 123, 456, 789                   (4 models, vs 2 in V33)
-    g_lgb_d127: seed 123  (keep)
-    g_lgb_d255: seed 123  (keep)
-    pm_lgb:     blend of deep+reg (keep)
-    pm_xgb:     seed 42 (keep)
-
-  TOTAL: 20 models (vs 11 in V33)
-  SLSQP: 100 starts/market (vs 50 in V33) for better optimization of 20 models
-  Features: IDENTICAL to V33/V28 (safe — same proven feature set)
+NITOR CASE COMPETITION - Robert Sølyst Lildholdt and Sebastian Poshteh
 """
 
 import os, warnings, gc, time
@@ -37,7 +13,7 @@ import lightgbm as lgb
 import xgboost as xgb
 
 warnings.filterwarnings('ignore')
-os.chdir('/Users/maggieng/Desktop/nitor')
+os.chdir('/Users/maggieng/Desktop/nitor') # INSERT YOUR OWN DIR
 
 t0 = time.time()
 def rmse(a, b): return float(np.sqrt(mean_squared_error(np.array(a), np.array(b))))
