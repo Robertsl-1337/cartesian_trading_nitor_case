@@ -1,6 +1,8 @@
 # Nitor Energy — Day-Ahead Electricity Price Forecasting
 
 **Team:** Cartesian Trading — Sebastian Poshteh & Robert Sølyst Lildholdt
+## FILES TO UPLOAD MANUALLY
+Please see that you need to upload the provided files yourself: test_for_participants, train and sample_submission
 
 ## Overview
 
